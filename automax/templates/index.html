@@ -1,0 +1,268 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AUTOMEX | Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #f6f7fb, #e9ebef);
+      color: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Navbar */
+    nav {
+      width: 100%;
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 40px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    nav .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    nav .logo img {
+      width: 120px;
+      border-radius: 6px;
+    }
+
+    nav h2 {
+      color: #ff2f2f;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #111;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ff2f2f;
+    }
+
+    /* Main Content */
+    main {
+      margin-top: 130px;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #111;
+    }
+
+    h1 span {
+      color: #ff2f2f;
+      text-shadow: 0 0 10px rgba(255,47,47,0.4);
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-top: 0.7rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .time-box {
+      background: #fff;
+      border: 2px solid #ff2f2f;
+      padding: 20px 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(255,47,47,0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .time-box:hover {
+      transform: translateY(-6px);
+    }
+
+    .time-box span {
+      display: block;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ff2f2f;
+    }
+
+    .subscribe {
+      margin-top: 3rem;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .subscribe input {
+      padding: 12px 15px;
+      width: 280px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      background: #fff;
+    }
+
+    .subscribe input:focus {
+      border-color: #ff2f2f;
+      box-shadow: 0 0 5px rgba(255,47,47,0.3);
+    }
+
+    .subscribe button {
+      background: #ff2f2f;
+      border: none;
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .subscribe button:hover {
+      background: #c20000;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 20px 0;
+      background: #fff;
+      color: #555;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      border-top: 2px solid #ff2f2f;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        text-align: center;
+        padding: 12px 20px;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      main {
+        margin-top: 160px;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .subscribe input {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">
+      <img src="{% static 'images/automex-logo.jpg' %}" alt="AUTOMEX Logo">
+      
+    </div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>We’re <span>Coming Soon</span></h1>
+    <p>Powering the next generation of CRM Automation — launching soon. Stay tuned!</p>
+
+    <div class="countdown">
+      <div class="time-box"><span id="days">01</span>Days</div>
+      <div class="time-box"><span id="hours">00</span>Hours</div>
+      <div class="time-box"><span id="minutes">00</span>Minutes</div>
+      <div class="time-box"><span id="seconds">00</span>Seconds</div>
+    </div>
+
+    <div class="subscribe">
+      <input type="email" placeholder="Enter your email" id="email">
+      <button>Notify Me</button>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 AUTOMEX CRM Automation | All Rights Reserved
+  </footer>
+
+  <script>
+    const countDownDate = new Date("Nov 01, 2025 00:00:00").getTime();
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerText = days;
+      document.getElementById("hours").innerText = hours;
+      document.getElementById("minutes").innerText = minutes;
+      document.getElementById("seconds").innerText = seconds;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        document.querySelector(".countdown").innerHTML = "<h2 style='color:#ff2f2f;'>We’re Live!</h2>";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
