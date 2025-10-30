@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-ci08=6cu@)#*s=p2&51d22+#v+*3af^b65khfesk0!9w8+j04r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['automax-sumb.onrender.com', 'localhost', '127.0.0.1']
+
 
 
 # Application definition
